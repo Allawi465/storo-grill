@@ -1,40 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=League+Spartan:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sail&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  background-color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  height: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  max-width: 72rem;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.meny-scroll-container {
-  display: flex; /* Ensure its children are displayed in a row */
-  overflow-x: auto; /* Allow horizontal scrolling when content overflows */
-  white-space: nowrap; /* Prevent wrapping to the next line */
+main {
+  flex: 1 !important;
 }
 
-/* Optional: Add some padding or margin to the buttons */
-.meny-scroll-container button {
-  margin-right: 10px;
+.logo {
+  font-family: 'Roboto', sans-serif;
 }
 
-@media (max-width: 414px) {
-  .topNav {
-    display: none;
-  }
+.active {
+  color: red;
 }
+
+.scroll-x-meny {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-x-meny::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+/* @media (max-width: 636px) {
+
+} */
