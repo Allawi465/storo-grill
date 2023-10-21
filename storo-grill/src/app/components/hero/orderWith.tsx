@@ -1,18 +1,18 @@
 import Image from 'next/image';
-import foodora from '../../../../public/meny/Foodora.svg';
-import wolt from '../../../../public/meny/Wolt.svg';
+import foodora from '../../../../public/foodora.png';
+import wolt from '../../../../public/Wolt.png';
 export default function OrderWith() {
   return (
-    <section className="bg-[#262626] h-[380px]">
-      <div className="gap-16 items-center h-full py-16 px-4 mx-auto md:grid md:grid-cols-2 lg:py-16 lg:px-6 max-w-6xl">
+    <div className="bg-[#9b98a1] h-3/6 overflow-hidden order_with">
+      <div className="gap-16 items-center h-full py-12 px-4 mx-auto sm:grid sm:grid-cols-2 lg:px-6 max-w-7xl">
         <div className="font-light text-[#141414] sm:text-lg ml-3">
-          <h2 className="mb-4 text-3xl sm:text-4xl tracking-tight font-bold text-white">
+          <h2 className="order_with_h2 text-4xl font-bold tracking-tight leading-none lg:text-6xl text-[262626]">
             Bestill din favorittmat nå!
           </h2>
-          <p className="mb-4 text-white">
+          <p className="my-4 text-black text-xl lg:text-[22px] sm:my-6">
             Du kan enkelt bestille mat hos oss. Ring oss direkte{' '}
             <a className="underline" href="tel:46750757">
-              46 75 07 57
+              +47 46 75 07 57
             </a>
             , eller benytt deg av våre leveringstjenester med{' '}
             <a
@@ -31,29 +31,25 @@ export default function OrderWith() {
             .
           </p>
         </div>
-        <div className="grid grid-cols-2 md:gap-4 md:mt-8">
+        <div className="flex sm:justify-center img_svg lg:mt-10">
+          <a
+            href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill"
+            className=""
+          >
+            <Image className="object-cover w-[150px]" src={wolt} alt="Wolt" />
+          </a>
           <a
             href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE"
-            className="max-h-[100px] md:max-h-full"
+            className=""
           >
             <Image
-              className="w-full rounded-lg max-h-[100px] md:max-h-full"
+              className="object-cover w-[90px] mt-2"
               src={foodora}
               alt="Foodora"
             />
           </a>
-          <a
-            href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill"
-            className="max-h-[100px] md:max-h-full"
-          >
-            <Image
-              className="mt-4 w-full lg:mt-10 rounded-lg max-h-[100px] md:max-h-full"
-              src={wolt}
-              alt="Wolt"
-            />
-          </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

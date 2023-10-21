@@ -22,8 +22,8 @@ function classNames(...classes: string[]): string {
 }
 
 const callsToAction = [
-  { name: 'Kontakt oss', href: '#', icon: PhoneIcon },
-  { name: 'Se Kart', href: '#', icon: MapIcon },
+  { name: 'Kontakt oss', href: 'tel:46750757', icon: PhoneIcon },
+  { name: 'Se Kart', href: '#kart', icon: MapIcon },
 ];
 
 export default function Example() {
@@ -35,6 +35,10 @@ export default function Example() {
     setOpen(!open);
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="bg-[#262626]">
       <nav
@@ -43,8 +47,7 @@ export default function Example() {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <h1 className="text-2xl font-extrabold tracking-tight leading-none logo text-gray-200">
+            <h1 className="text-3xl font-extrabold tracking-tight leading-none logo text-gray-200">
               Storo Grill
             </h1>
           </a>
@@ -202,6 +205,7 @@ export default function Example() {
           </div>
         </div>
       </nav>
+
       <Dialog
         as="div"
         className="md:hidden"
@@ -232,6 +236,10 @@ export default function Example() {
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={() => {
+                    close();
+                    closeMobileMenu(); // Close the mobile menu
+                  }}
                 >
                   Hjem
                 </a>
@@ -255,6 +263,10 @@ export default function Example() {
                             as="a"
                             href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            onClick={() => {
+                              close();
+                              closeMobileMenu(); // Close the mobile menu
+                            }}
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -266,19 +278,23 @@ export default function Example() {
                 <a
                   href="#gallery"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={() => {
+                    close();
+                    closeMobileMenu();
+                  }}
                 >
                   Gallery
                 </a>
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Wolt
                 </a>
                 <a
-                  href="#"
+                  href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Foodora

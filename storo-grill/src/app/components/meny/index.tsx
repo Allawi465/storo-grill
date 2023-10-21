@@ -1,4 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { pizza } from './json/pizza';
+import { calzone } from './json/calzone';
+import { grillretter } from './json/grillretter';
+import { barnemeny } from './json/barnemeny';
+import { drikke } from './json/drikke';
+import { hamburger } from './json/hamburger';
 
 export default function MenuBtns() {
   const [activeLink, setActiveLink] = useState('');
@@ -7,7 +13,7 @@ export default function MenuBtns() {
 
   const sectionIds = [
     'pizza',
-    'calozne',
+    'calzone',
     'grillretter',
     'hamburger',
     'barnemeny',
@@ -66,21 +72,19 @@ export default function MenuBtns() {
   }, [activeLink]);
 
   return (
-    <section className="bg-white pt-3 pb-8" id="meny">
+    <section className="bg-[#262626] pt-8" id="meny">
       <div
-        className="overflow-x-auto bg-white text-center sticky top-0 scroll-x-meny shadow-md py-2"
+        className="overflow-x-auto bg-[#262626] text-center sticky top-0 scroll-x-meny py-4"
         ref={containerRef}
       >
-        <div className="h-14 pt-4 bg-white meny-btns mx-2">
+        <div className="my-2 bg-bg-[#262626] mx-2">
           {sectionIds.map((sectionId) => (
             <a
               key={sectionId}
               href={`#${sectionId}`}
               ref={(el) => (linkRefs.current[sectionId] = el)}
-              className={`text-gray-900 border border-white hover:border-gray-300 text-sm bg-white rounded-full sm:text-base font-medium px-5 py-2.5 text-center mr-3 ${
-                activeLink === sectionId
-                  ? 'text-blue-700 border border-blue-700'
-                  : ''
+              className={`text-white border border-transparent hover:border-[#737373] text-sm bg-[#262626]  rounded-full sm:text-lg font-medium px-5 py-2.5 text-center mr-4 ${
+                activeLink === sectionId ? 'active' : ''
               }`}
             >
               {sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}
@@ -88,102 +92,138 @@ export default function MenuBtns() {
           ))}
         </div>
       </div>
-      <div className="bg-[#f5f5f5]">
+      <div className="bg-[#262626]">
         <div className="max-w-6xl mx-auto">
           <div id="pizza" className="pt-20">
-            <h3 className="mx-2 text-3xl tracking-tight font-medium text-[#171717]">
-              Pizza
+            <h3 className="original-text-shadow mx-2 tracking-tight">Pizza</h3>
+            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-4">
+              {pizza.map((pizza, index) => (
+                <div className="rounded bg-[#404040] h-24 p-2 " key={index}>
+                  <div className="flex text-white">
+                    <span className="mr-1 text-lg">{index + 1}.</span>
+                    <h1 className="mr-1 text-lg">{pizza.name}</h1>
+                    <span className=" text-[#FEFD92] text-lg">
+                      ({pizza.allergens.join(',')})
+                    </span>
+                  </div>
+                  <p className="ml-1 text-white text-sm">
+                    {pizza.ingredients}.
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="pt-20" id="calzone">
+            <h3 className="original-text-shadow mx-2 tracking-tight">
+              Calzone
             </h3>
             <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-4">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
+              {calzone.map((calzone, index) => (
+                <div className="rounded bg-[#404040] h-24 p-2" key={index}>
+                  <div className="flex text-white">
+                    <span className="mr-1 text-lg">{index + 1}.</span>
+                    <h1 className="mr-1 text-lg">{calzone.name}</h1>
+                    <span className=" text-[#FEFD92] text-lg">
+                      ({calzone.allergens.join(',')})
+                    </span>
+                  </div>
+                  <p className="ml-1 text-white text-sm">
+                    {calzone.ingredients}.
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="pt-20" id="calozne">
-            <h3 className="mx-2 my-6 text-3xl tracking-tight font-medium  text-[#171717]">
-              Calozne
-            </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-            </div>
-          </div>
+
           <div className="pt-20" id="grillretter">
-            <h3 className="mx-2 text-3xl tracking-tight font-medium  text-[#171717]">
+            <h3 className="original-text-shadow mx-2 tracking-tight">
               Grillretter
             </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
+            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-4">
+              {grillretter.map((grillretter, index) => (
+                <div className="rounded bg-[#404040] h-24 p-2" key={index}>
+                  <div className="flex text-white">
+                    <span className="mr-1 text-lg">{index + 1}.</span>
+                    <h1 className="mr-1 text-lg">{grillretter.name}</h1>
+                    <span className=" text-[#FEFD92] text-lg">
+                      ({grillretter.allergens})
+                    </span>
+                  </div>
+                  {grillretter.ingredients && (
+                    <p className="ml-1 text-white text-sm">
+                      {grillretter.ingredients}.
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
+
           <div className="pt-20" id="hamburger">
-            <h3 className="mx-2 text-3xl tracking-tight font-medium  text-[#171717]">
+            <h3 className="original-text-shadow mx-2 tracking-tight">
               Hamburger
             </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
+            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-4">
+              {hamburger.map((burger, index) => (
+                <div className="rounded bg-[#404040] h-24 p-2 " key={index}>
+                  <div className="flex text-white">
+                    <span className="mr-1 text-lg">{index + 1}.</span>
+                    <h1 className="mr-1 text-lg">{burger.name}</h1>
+                    <span className=" text-[#FEFD92] text-lg">
+                      ({burger.Allergens})
+                    </span>
+                  </div>
+                  {burger.Ingredients && (
+                    <p className="ml-1 text-white text-sm">
+                      {burger.Ingredients}.
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
+
           <div className="pt-20" id="barnemeny">
-            <h3 className="mx-2 text-3xl tracking-tight font-medium  text-[#171717]">
+            <h3 className="original-text-shadow mx-2 tracking-tight">
               Barnemeny
             </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
+            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-4">
+              {barnemeny.map((barnemeny, index) => (
+                <div className="rounded bg-[#404040] h-24 p-2" key={index}>
+                  <div className="flex text-white">
+                    <span className="mr-1 text-lg">{index + 1}.</span>
+                    <h1 className="mr-1 text-lg">{barnemeny.name}</h1>
+                    <span className=" text-[#FEFD92] text-lg">
+                      ({barnemeny.allergens})
+                    </span>
+                  </div>
+                  {barnemeny.ingredients && (
+                    <p className="ml-1 text-white text-sm">
+                      {barnemeny.ingredients}.
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
-          <div className="pt-20" id="drikke">
-            <h3 className="mx-2 text-3xl tracking-tight font-medium  text-[#171717]">
-              Drikke
-            </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
+
+          <div className="py-20" id="drikke">
+            <h3 className="original-text-shadow mx-2 tracking-tight">Drikke</h3>
+            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-4">
+              {drikke.map((drikke, index) => (
+                <div className="rounded bg-[#404040] h-24 p-2" key={index}>
+                  <div className="flex text-white">
+                    <span className="mr-1 text-lg">{index + 1}.</span>
+                    <h1 className="mr-1 text-lg">{drikke.name}</h1>
+                  </div>
+                  {drikke.size && (
+                    <p className="ml-1 text-white text-sm">
+                      Str: {drikke.size}.
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -191,105 +231,3 @@ export default function MenuBtns() {
     </section>
   );
 }
-
-/* 
-      <div className="bg-[#f5f5f5]">
-        <div className="max-w-6xl mx-auto pt-4">
-          <div id="pizza" className="pt-20">
-            <h3 className="mx-2 my-2 text-3xl tracking-tight font-medium  text-[#171717]">
-              Pizza
-            </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-4">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-            </div>
-          </div>
-          <div className="mt-8 pt-20" id="calozne">
-            <h3 className="mx-2 my-6 text-3xl tracking-tight font-medium  text-[#171717]">
-              Calozne
-            </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-            </div>
-          </div>
-          <div className="mt-8 pt-20" id="grillretter">
-            <h3 className="mx-2 my-6 text-3xl tracking-tight font-medium  text-[#171717]">
-              Grillretter
-            </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-            </div>
-          </div>
-          <div className="mt-8 pt-20" id="hamburger">
-            <h3 className="mx-2 my-6 text-3xl tracking-tight font-medium  text-[#171717]">
-              Hamburger
-            </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-            </div>
-          </div>
-          <div className="mt-8 pt-20" id="barnemeny">
-            <h3 className="mx-2 my-6 text-3xl tracking-tight font-medium  text-[#171717]">
-              Barnemeny
-            </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-            </div>
-          </div>
-          <div className="mt-8 pt-20" id="drikke">
-            <h3 className="mx-2 my-6 text-3xl tracking-tight font-medium  text-[#171717]">
-              Drikke
-            </h3>
-            <div className="mx-2 sm:mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-              <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 mx-2"></div>
-            </div>
-          </div>
-        </div>
-      </div> */
