@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  basePath: '/storo-grill',
-  assetPrefix: '/storo-grill/',
-};
+const nextConfig = {};
 
 module.exports = nextConfig;
