@@ -1,7 +1,7 @@
-import { Fragment, useRef, useState } from 'react';
+import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-export default function ({ isOpen, setIsOpen, cancelButtonRef }: any) {
+export default function Allergi({ isOpen, setIsOpen, cancelButtonRef }: any) {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog

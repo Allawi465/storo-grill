@@ -48,7 +48,7 @@ export default function MenuBtns() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initialize activeLink on load
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
