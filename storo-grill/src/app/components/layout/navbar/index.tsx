@@ -47,7 +47,7 @@ export default function Example() {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <h1 className="text-3xl font-extrabold tracking-tight leading-none logo text-gray-200">
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-none logo text-gray-200">
               Storo Grill
             </h1>
           </a>
@@ -72,13 +72,16 @@ export default function Example() {
 
           <Popover className="relative">
             <Popover.Button
-              className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-400 hover:text-gray-300"
+              className={classNames(
+                open ? ' text-[#eded6f]' : 'text-gray-300 hover:text-gray-50',
+                'flex items-center gap-x-1 text-sm font-semibold leading-6  '
+              )}
               onClick={togglePopover}
             >
               Meny
               <ChevronDownIcon
                 className={classNames(
-                  open ? 'rotate-180' : '',
+                  open ? 'rotate-180 text-[#eded6f]' : '',
                   'h-5 w-5 flex-none '
                 )}
                 aria-hidden="true"
@@ -94,7 +97,7 @@ export default function Example() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Popover.Panel className="absolute -left-44 top-[28px] z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#262626] ring-1 ring-gray-900/50 shadow-lg shadow-gray-200 ">
+              <Popover.Panel className="absolute -left-44 top-[28px] z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#262626] ring-1 ring-gray-900/50 shadow-md shadow-gray-300 ">
                 <div className="p-4">
                   {products.map((item) => (
                     <div
@@ -143,7 +146,7 @@ export default function Example() {
           </Popover>
           <a
             href="#gallery"
-            className="text-sm font-semibold leading-6 text-gray-400 hover:text-gray-300"
+            className="text-sm font-semibold leading-6 text-gray-300 hover:text-gray-50"
           >
             Gallery
           </a>
@@ -156,7 +159,7 @@ export default function Example() {
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">Open user menu</span>
                 <a className="ml-1 mr-2 text-sm flex items-center">
-                  <span className="text-sm font-semibold leading-6 topNav ">
+                  <span className="text-sm font-semibold leading-6">
                     Bestill med
                   </span>
                   <ShoppingBagIcon className="w-6 h-6 ml-1" />
@@ -172,7 +175,7 @@ export default function Example() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right top-[32px] rounded-lg bg-[#262626] ring-1 ring-gray-900/5 divide-y divide-gray-50/5 shadow-lg shadow-gray-200">
+                <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right top-[32px] rounded-lg bg-[#262626] ring-1 ring-gray-900/5 divide-y divide-gray-50/5 shadow-md shadow-gray-200">
                   <Menu.Item>
                     <a
                       href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE"
@@ -213,7 +216,7 @@ export default function Example() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#262626] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -223,7 +226,7 @@ export default function Example() {
             </a>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 rounded-md p-2.5 text-gray-200"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -235,9 +238,8 @@ export default function Example() {
               <div className="space-y-2 py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-[#525252]"
                   onClick={() => {
-                    close();
                     closeMobileMenu(); // Close the mobile menu
                   }}
                 >
@@ -246,11 +248,16 @@ export default function Example() {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button
+                        className={classNames(
+                          open ? ' text-[#eded6f]' : 'text-gray-300',
+                          'flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7  hover:bg-[#525252]'
+                        )}
+                      >
                         Meny
                         <ChevronDownIcon
                           className={classNames(
-                            open ? 'rotate-180' : '',
+                            open ? 'rotate-180 text-[#eded6f]' : '',
                             'h-5 w-5 flex-none'
                           )}
                           aria-hidden="true"
@@ -262,9 +269,8 @@ export default function Example() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-300 hover:bg-[#525252]"
                             onClick={() => {
-                              close();
                               closeMobileMenu(); // Close the mobile menu
                             }}
                           >
@@ -277,9 +283,8 @@ export default function Example() {
                 </Disclosure>
                 <a
                   href="#gallery"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:bg-[#525252]"
                   onClick={() => {
-                    close();
                     closeMobileMenu();
                   }}
                 >
@@ -289,13 +294,13 @@ export default function Example() {
               <div className="py-6">
                 <a
                   href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-300 hover:bg-[#525252]"
                 >
                   Wolt
                 </a>
                 <a
                   href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-300 hover:bg-[#525252]"
                 >
                   Foodora
                 </a>

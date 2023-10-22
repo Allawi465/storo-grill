@@ -2,7 +2,7 @@ const GoogleMapEmbed: React.FC = () => {
   return (
     <section
       id="kart"
-      className="bg-[#262626] bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] h-full relative"
+      className="bg-[#262626] bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] h-full relative overflow-hidden"
     >
       <div className="flex flex-wrap md:flex-nowrap max-w-7xl mx-auto sm:gap-12">
         <div className="w-full md:w-2/4">

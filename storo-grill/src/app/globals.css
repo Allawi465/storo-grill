@@ -25,6 +25,8 @@ main {
 
 .logo {
   font-family: 'Roboto', sans-serif;
+  text-shadow: 4px 4px 0px #b03434, 6px 6px 0px #eded6f;
+  color: white;
 }
 
 .scroll-x-meny {
@@ -47,16 +49,11 @@ iframe {
   height: 272px !important;
 }
 
-.original-text-shadow {
-  line-height: 1;
-  color: #fffff0;
-  font-size: 40px;
-  text-shadow: 4px 4px 0px rgba(162, 47, 47, 0.59),
-    8px 8px 0px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
+.gallery {
+  grid-template-columns: repeat(3, minmax(0, 350px));
 }
 
-/* @media (max-width: 240px) {
-  .hero-h2 {
-  }
-} */
+.original-text-shadow {
+  color: #fffff0;
+  font-weight: bold;
+}

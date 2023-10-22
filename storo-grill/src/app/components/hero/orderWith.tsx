@@ -36,14 +36,18 @@ export default function OrderWith() {
             href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill"
             className=""
           >
-            <Image className="object-cover w-[150px]" src={wolt} alt="Wolt" />
+            <Image
+              className="object-cover w-[150px] sm:w-[190px]"
+              src={wolt}
+              alt="Wolt"
+            />
           </a>
           <a
             href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE"
             className=""
           >
             <Image
-              className="object-cover w-[90px] mt-2"
+              className="object-cover w-[90px] sm:w-[120px] mt-2"
               src={foodora}
               alt="Foodora"
             />
