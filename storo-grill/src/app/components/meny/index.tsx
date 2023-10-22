@@ -97,7 +97,7 @@ export default function MenuBtns() {
               key={sectionId}
               href={`#${sectionId}`}
               ref={(el) => (linkRefs.current[sectionId] = el)}
-              className={`text-white border border-transparent hover:border-[#737373] text-sm bg-[#262626]  rounded-full sm:text-lg font-medium px-5 py-2.5 text-center mr-4 ${
+              className={`text-white border border-transparent hover:border-[#737373] text-sm bg-[#262626]  rounded-full sm:text-md font-medium px-5 py-2.5 text-center mr-4 ${
                 activeLink === sectionId ? 'active' : ''
               }`}
             >

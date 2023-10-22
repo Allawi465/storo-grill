@@ -1,4 +1,3 @@
-import GoogleMapEmbed from '../reviws/map';
 import Image from 'next/image';
 import galleryImg1 from '../../../../public/gallery/gallery1.jpeg';
 import galleryImg2 from '../../../../public/gallery/gallery2.jpeg';
@@ -9,7 +8,7 @@ import galleryImg6 from '../../../../public/gallery/gallery6.jpeg';
 
 export default function Gallery() {
   return (
-    <section className="h-screen bg-[#262626] flex flex-col" id="gallery">
+    <section className="bg-[#262626] flex flex-col py-20 px-2" id="gallery">
       <div className="flex-1 max-w-7xl mx-auto ">
         <div className="flex flex-col h-full my-auto">
           <div className="gallery grid grid-cols-2 gap-2 my-auto">
@@ -57,9 +56,6 @@ export default function Gallery() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="pb-8">
-        <GoogleMapEmbed />
       </div>
     </section>
   );
