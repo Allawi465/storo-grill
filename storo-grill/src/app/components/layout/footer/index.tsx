@@ -94,7 +94,7 @@ export default function Footer() {
       <hr className="my-6 sm:mx-auto border-gray-700" />
       <div className="max-w-6xl mx-auto">
         <span className="block text-sm text-center text-gray-400 mb-1">
-          © 2021 - {new Date().getFullYear()} STORO GRILL & CAFE developed by by{' '}
+          © 2021 - {new Date().getFullYear()} STORO GRILL & CAFE developed by{' '}
           <a className="hover:underline cursor-pointer">Ohana</a>.
         </span>
       </div>
