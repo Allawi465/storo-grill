@@ -9,7 +9,7 @@ export default function OrderWith() {
           <h2 className="order_with_h2 text-4xl font-bold tracking-tight leading-none lg:text-6xl text-[262626]">
             Bestill din favorittmat nå!
           </h2>
-          <p className="my-4 text-black text-xl lg:text-[22px] sm:my-6">
+          <p className="my-4 text-black text-lg sm:text-2xl sm:my-6">
             Du kan enkelt bestille mat hos oss. Ring oss direkte{' '}
             <a className="underline" href="tel:46750757">
               +47 46 75 07 57
@@ -31,21 +31,15 @@ export default function OrderWith() {
             .
           </p>
         </div>
-        <div className="flex sm:justify-center img_svg lg:mt-10">
-          <a
-            href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill"
-            className=""
-          >
+        <div className="flex justify-center img_svg lg:mt-10">
+          <a href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill">
             <Image
               className="object-cover w-[150px] sm:w-[190px]"
               src={wolt}
               alt="Wolt"
             />
           </a>
-          <a
-            href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE"
-            className=""
-          >
+          <a href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE">
             <Image
               className="object-cover w-[90px] sm:w-[120px] mt-2"
               src={foodora}

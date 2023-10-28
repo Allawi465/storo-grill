@@ -1,5 +1,7 @@
 'use client';
 import { Fragment, useState } from 'react';
+import Logo from './logo';
+import Image from 'next/image';
 import {
   Dialog,
   Disclosure,
@@ -14,9 +16,7 @@ import {
   ShoppingBagIcon,
 } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, PhoneIcon } from '@heroicons/react/20/solid';
-import Image from 'next/image';
 import { products } from './dropdown';
-
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ');
 }
@@ -46,11 +46,7 @@ export default function Example() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-none logo text-gray-200">
-              Storo Grill
-            </h1>
-          </a>
+          <Logo />
         </div>
         <div className="flex sm:hidden">
           <button
@@ -97,7 +93,7 @@ export default function Example() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Popover.Panel className="absolute -left-44 top-[28px] z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#262626] ring-1 ring-gray-900/50 shadow-md shadow-gray-300 ">
+              <Popover.Panel className="absolute -left-44 top-[28px] z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#262626] ring-1 ring-gray-900/5  shadow-md shadow-gray-200 ">
                 <div className="p-4">
                   {products.map((item) => (
                     <div
@@ -218,12 +214,7 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#262626] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <h1 className="text-3xl font-extrabold tracking-tight leading-none logo">
-                Storo Grill
-              </h1>
-            </a>
+            <Logo />
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-200"

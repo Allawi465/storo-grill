@@ -46,7 +46,7 @@ export default function Allergi({ isOpen, setIsOpen, cancelButtonRef }: any) {
                       <div className="mt-2">
                         <p className="text-sm text-gray-200 leading-7">
                           1. Glutten (Hvetemel), 2. Skalldyr, 3. Egg, 4. Fisk,
-                          5.Peanøtter, 6. Soya, 7. Melk, 8. Nøtter, 9. Selleri,
+                          5. Peanøtter, 6. Soya, 7. Melk, 8. Nøtter, 9. Selleri,
                           10. Sennep, 11. Sesamfrø.
                         </p>
                       </div>

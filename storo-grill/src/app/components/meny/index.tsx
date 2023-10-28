@@ -108,7 +108,7 @@ export default function MenuBtns() {
       </div>
       <div className="bg-[#262626]">
         <div className="max-w-6xl mx-auto">
-          <div id="pizza" className="pt-20">
+          <div id="pizza" className="pt-[68px]">
             <h3 className="original-text-shadow text-2xl sm:text-3xl mx-2 sm:mx-auto tracking-tight">
               Pizza
             </h3>
@@ -136,7 +136,7 @@ export default function MenuBtns() {
             </div>
           </div>
 
-          <div className="pt-20" id="calzone">
+          <div className="pt-[68px]" id="calzone">
             <h3 className="original-text-shadow text-2xl sm:text-3xl mx-2 sm:mx-auto tracking-tight">
               Calzone
             </h3>
@@ -163,7 +163,7 @@ export default function MenuBtns() {
             </div>
           </div>
 
-          <div className="pt-20" id="grillretter">
+          <div className="pt-[68px]" id="grillretter">
             <h3 className="original-text-shadow text-2xl sm:text-3xl mx-2 sm:mx-auto tracking-tight ">
               Grillretter
             </h3>
@@ -192,7 +192,7 @@ export default function MenuBtns() {
             </div>
           </div>
 
-          <div className="pt-20" id="hamburger">
+          <div className="pt-[68px]" id="hamburger">
             <h3 className="original-text-shadow text-2xl sm:text-3xl mx-2 sm:mx-auto tracking-tight">
               Hamburger
             </h3>
@@ -221,7 +221,7 @@ export default function MenuBtns() {
             </div>
           </div>
 
-          <div className="pt-20" id="barnemeny">
+          <div className="pt-[68px]" id="barnemeny">
             <h3 className="original-text-shadow text-2xl sm:text-3xl mx-2 sm:mx-auto tracking-tight">
               Barnemeny
             </h3>
@@ -250,7 +250,7 @@ export default function MenuBtns() {
             </div>
           </div>
 
-          <div className="pt-20" id="drikke">
+          <div className="pt-[68px]" id="drikke">
             <h3 className="original-text-shadow text-2xl sm:text-3xl mx-2 sm:mx-auto tracking-tight">
               Drikke
             </h3>

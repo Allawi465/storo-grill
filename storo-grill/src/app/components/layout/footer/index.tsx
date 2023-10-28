@@ -1,6 +1,6 @@
 import { LuPhoneCall } from 'react-icons/lu';
 import { FiMapPin } from 'react-icons/fi';
-import { AiOutlineFacebook } from 'react-icons/ai';
+import { AiOutlineFacebook, AiOutlineInstagram } from 'react-icons/ai';
 
 export default function Footer() {
   return (
@@ -54,7 +54,7 @@ export default function Footer() {
                     href="tel:46750757"
                     className=" hover:underline flex items-center"
                   >
-                    <LuPhoneCall className="mr-2" /> +47 46 75 07 57
+                    <LuPhoneCall className="mr-2 " /> +47 46 75 07 57
                   </a>
                 </li>
                 <li className="mb-4">
@@ -62,7 +62,7 @@ export default function Footer() {
                     href="https://www.google.com/maps?ll=59.946442,10.772675&z=16&t=m&hl=no&gl=NO&mapclient=embed&cid=13992137949518365651"
                     className=" hover:underline flex items-center"
                   >
-                    <FiMapPin className="mr-2" /> Vitaminveien 14, 0483 Oslo
+                    <FiMapPin className="mr-2 " /> Vitaminveien 14, 0483 Oslo
                   </a>
                 </li>
                 <li className="mb-4">
@@ -70,7 +70,15 @@ export default function Footer() {
                     href="https://www.facebook.com/p/Storogrill-100076404815236/"
                     className=" hover:underline flex items-center"
                   >
-                    <AiOutlineFacebook className="mr-2" /> Storogrill
+                    <AiOutlineFacebook className="mr-2 " /> Storogrill
+                  </a>
+                </li>
+                <li className="mb-4">
+                  <a
+                    href="https://www.facebook.com/p/Storogrill-100076404815236/"
+                    className=" hover:underline flex items-center"
+                  >
+                    <AiOutlineInstagram className="mr-2" /> Storogrill
                   </a>
                 </li>
               </ul>
@@ -81,7 +89,7 @@ export default function Footer() {
                   Åpningstider
                 </h3>
                 <dd className="mt-2 leading-7 text-gray-400">
-                  Man - fredag: 11.00 - 23:00
+                  Man - lørdag: 10.00 - 23:00
                 </dd>
                 <dd className="mt-2 leading-7 text-gray-400">
                   Søndag: 12.00 - 23:00
@@ -93,9 +101,13 @@ export default function Footer() {
       </div>
       <hr className="my-6 sm:mx-auto border-gray-700" />
       <div className="max-w-6xl mx-auto">
-        <span className="block text-sm text-center text-gray-400 mb-1">
-          © 2021 - {new Date().getFullYear()} STORO GRILL & CAFE developed by{' '}
-          <a className="hover:underline cursor-pointer">Ohana</a>.
+        <span className="block text-sm text-center text-white mb-1">
+          © 2021 - {new Date().getFullYear()} <span>STORO GRILL</span> utvilket
+          av{' '}
+          <a className="hover:underline  underline-offset-4 cursor-pointer">
+            Ohana
+          </a>
+          .
         </span>
       </div>
     </footer>

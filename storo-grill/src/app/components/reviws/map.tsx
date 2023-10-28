@@ -7,7 +7,7 @@ const GoogleMapEmbed: React.FC = () => {
       <div className="flex flex-wrap md:flex-nowrap max-w-7xl mx-auto sm:gap-12">
         <div className="w-full md:w-2/4">
           <div>
-            <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative my-auto">
+            <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative my-auto md:h-[272px]">
               <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-4xl text-white">
                 Besøk oss i Vitaminveien 14 i dag!
               </h1>
@@ -16,7 +16,7 @@ const GoogleMapEmbed: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="bg-gradient-to-b to-transparent from-gray-800 w-full h-full absolute top-0 left-0 z-0"></div>
+          <div className="sm:bg-gradient-to-b bg-gradient-to-l to-transparent  from-gray-800 w-full h-full absolute top-0 left-0 z-0"></div>
         </div>
         <div className="md:w-2/4 h-[272px] z-50 w-full">
           <iframe
