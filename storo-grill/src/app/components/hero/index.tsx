@@ -15,8 +15,8 @@ export default function Hero() {
 
         <div className="absolute inset-0 text-white font-extrabold flex flex-col justify-center items-center hero">
           <div className="flex flex-col justify-center my-auto px-4 text-hero">
-            <h2 className="hero-h2 text-5xl font-extrabold tracking-tight leading-none text-white lg:text-6xl flex justify-start sm:justify-center mb-4">
-              Kom tom, gå full!
+            <h2 className="hero-h2 text-4xl font-extrabold tracking-tight leading-none text-white lg:text-5xl flex justify-start sm:justify-center mb-4">
+              Tenk globalt, Smak lokalt
             </h2>
             <p className="text-2xl font-normal text-white flex justify-center mb-8 italic">
               Cheesy pizza, homestyle burgers & smakfull kebab

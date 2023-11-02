@@ -25,7 +25,7 @@ main {
 
 .logo {
   font-family: 'Roboto', sans-serif;
-  text-shadow: 3px 3px 0px #b03434, 6px 6px 0px #eded6f;
+  /*   text-shadow: 3px 3px 0px #b03434, 6px 6px 0px #eded6f; */
   color: white;
 }
 

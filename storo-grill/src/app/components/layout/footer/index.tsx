@@ -75,7 +75,7 @@ export default function Footer() {
                 </li>
                 <li className="mb-4">
                   <a
-                    href="https://www.facebook.com/p/Storogrill-100076404815236/"
+                    href="https://instagram.com/storogrill?igshid=OGQ5ZDc2ODk2ZA=="
                     className=" hover:underline flex items-center"
                   >
                     <AiOutlineInstagram className="mr-2" /> Storogrill
@@ -89,10 +89,10 @@ export default function Footer() {
                   Åpningstider
                 </h3>
                 <dd className="mt-2 leading-7 text-gray-400">
-                  Man - lørdag: 10.00 - 23:00
+                  Man - fre: 10.00 - 23:00
                 </dd>
                 <dd className="mt-2 leading-7 text-gray-400">
-                  Søndag: 12.00 - 23:00
+                  Lør - søn: 10.00 - 23:00
                 </dd>
               </div>
             </dl>
