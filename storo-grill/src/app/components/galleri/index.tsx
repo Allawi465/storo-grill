@@ -8,7 +8,7 @@ import galleryImg6 from '../../../../public/gallery/gallery6.jpeg';
 
 export default function Gallery() {
   return (
-    <section className="bg-[#262626] flex flex-col py-20 px-2" id="gallery">
+    <section className="bg-[#262626] flex flex-col py-40 px-2" id="gallery">
       <div className="flex-1 max-w-7xl mx-auto ">
         <div className="flex flex-col h-full my-auto">
           <div className="gallery grid grid-cols-2 gap-2 my-auto">

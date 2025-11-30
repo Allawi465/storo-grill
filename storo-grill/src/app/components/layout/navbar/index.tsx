@@ -28,7 +28,6 @@ const callsToAction = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const [open, setOpen] = useState(false);
 
   const togglePopover = () => {
@@ -40,24 +39,33 @@ export default function Example() {
   };
 
   return (
-    <header className="bg-[#262626]">
+
+    <header className="bg-[#262626] relative z-20">
       <nav
-        className="sm:mx-auto flex max-w-7xl items-center justify-between py-1 mx-2 lg:px-8"
+        className="sm:mx-auto flex max-w-7xl items-center justify-between py-1 mx-2 lg:px-8 over overflow-hidden"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <Logo />
         </div>
+
         <div className="flex sm:hidden">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <span className="sr-only">
+              {mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
+            </span>
+            {mobileMenuOpen ? (
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            )}
           </button>
         </div>
+
         <Popover.Group className="hidden sm:flex sm:gap-x-12">
           <a
             href="#"
@@ -70,7 +78,7 @@ export default function Example() {
             <Popover.Button
               className={classNames(
                 open ? ' text-[#eded6f]' : 'text-gray-300 hover:text-gray-50',
-                'flex items-center gap-x-1 text-sm font-semibold leading-6  '
+                'flex items-center gap-x-1 text-sm font-semibold leading-6'
               )}
               onClick={togglePopover}
             >
@@ -78,7 +86,7 @@ export default function Example() {
               <ChevronDownIcon
                 className={classNames(
                   open ? 'rotate-180 text-[#eded6f]' : '',
-                  'h-5 w-5 flex-none '
+                  'h-5 w-5 flex-none'
                 )}
                 aria-hidden="true"
               />
@@ -93,17 +101,17 @@ export default function Example() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Popover.Panel className="absolute -left-44 top-[28px] z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#262626] ring-1 ring-gray-900/5  shadow-md shadow-gray-200 ">
+              <Popover.Panel className="absolute -left-44 top-[28px] z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#262626] ring-1 ring-gray-900/5 shadow-md shadow-gray-200">
                 <div className="p-4">
                   {products.map((item) => (
                     <div
                       key={item.name}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#525252]"
                     >
-                      <div className="flex h-17 w-[80px] flex-none items-center justify-center rounded-lg ">
+                      <div className="flex h-17 w-[80px] flex-none items-center justify-center rounded-lg">
                         <Image
                           src={item.icon}
-                          className="h-full w-full text-gray-600 object-cover rounded "
+                          className="h-full w-full text-gray-600 object-cover rounded"
                           alt={item.name}
                         />
                       </div>
@@ -114,7 +122,7 @@ export default function Example() {
                         >
                           {item.name}
                           <span className="absolute inset-0" />
-                          <p className="mt-1 text-gray-100 ">
+                          <p className="mt-1 text-gray-100">
                             {item.description}
                           </p>
                         </a>
@@ -140,6 +148,7 @@ export default function Example() {
               </Popover.Panel>
             </Transition>
           </Popover>
+
           <a
             href="#gallery"
             className="text-sm font-semibold leading-6 text-gray-300 hover:text-gray-50"
@@ -147,9 +156,9 @@ export default function Example() {
             Gallery
           </a>
         </Popover.Group>
+
         <div className="hidden sm:flex lg:flex-1 md:justify-end">
           <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto">
-            {/* Order with dropdown */}
             <Menu as="div" className="relative">
               <Menu.Button className="relative flex items-center text-gray-400 hover:text-gray-300">
                 <span className="absolute -inset-1.5" />
@@ -177,7 +186,7 @@ export default function Example() {
                       href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE"
                       className="block px-4 py-2 text-sm group text-gray-50 hover:bg-[#525252] hover:rounded-t-lg"
                     >
-                      <p className={`mb-3 `}>
+                      <p className="mb-3">
                         Foodora{' '}
                         <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                           -&gt;
@@ -188,9 +197,9 @@ export default function Example() {
                   <Menu.Item>
                     <a
                       href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill"
-                      className="block px-4 py-2 text-sm group text-gray-50 hover:bg-[#525252] hover:rounded-b-lg "
+                      className="block px-4 py-2 text-sm group text-gray-50 hover:bg-[#525252] hover:rounded-b-lg"
                     >
-                      <p className={`mb-3 divide-y`}>
+                      <p className="mb-3">
                         Wolt{' '}
                         <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                           -&gt;
@@ -205,44 +214,36 @@ export default function Example() {
         </div>
       </nav>
 
+      {/* Mobile menu overlay & panel */}
       <Dialog
         as="div"
         className="md:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
+        {/* dark overlay */}
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#262626] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Logo />
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
+
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#262626] sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          {/* push content a bit down so it starts under header */}
+          <div className="mt-6 flow-root mx-2">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-[#525252]"
-                  onClick={() => {
-                    closeMobileMenu(); // Close the mobile menu
-                  }}
+                  onClick={closeMobileMenu}
                 >
                   Hjem
                 </a>
+
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
                       <Disclosure.Button
                         className={classNames(
                           open ? ' text-[#eded6f]' : 'text-gray-300',
-                          'flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7  hover:bg-[#525252]'
+                          'flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-[#525252]'
                         )}
                       >
                         Meny
@@ -254,6 +255,7 @@ export default function Example() {
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
+
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...products, ...callsToAction].map((item) => (
                           <Disclosure.Button
@@ -261,9 +263,7 @@ export default function Example() {
                             as="a"
                             href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-300 hover:bg-[#525252]"
-                            onClick={() => {
-                              closeMobileMenu(); // Close the mobile menu
-                            }}
+                            onClick={closeMobileMenu}
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -272,26 +272,28 @@ export default function Example() {
                     </>
                   )}
                 </Disclosure>
+
                 <a
                   href="#gallery"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:bg-[#525252]"
-                  onClick={() => {
-                    closeMobileMenu();
-                  }}
+                  onClick={closeMobileMenu}
                 >
                   Gallery
                 </a>
               </div>
+
               <div className="py-6">
                 <a
                   href="https://wolt.com/nb/nor/oslo/restaurant/storo-grill"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-300 hover:bg-[#525252]"
+                  onClick={closeMobileMenu}
                 >
                   Wolt
                 </a>
                 <a
                   href="https://www.foodora.no/restaurant/fbr5/storo-grill-and-cafe?gclid=CjwKCAjwo9unBhBTEiwAipC11zsdPbhcFFp6Nijs3H6ZShpx2fhvdvpR2KDCYSwUbJlUceL9PJMMZBoCuaoQAvD_BwE"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-300 hover:bg-[#525252]"
+                  onClick={closeMobileMenu}
                 >
                   Foodora
                 </a>
