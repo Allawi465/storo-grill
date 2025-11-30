@@ -105,7 +105,7 @@ export default function Footer() {
           © 2021 - {new Date().getFullYear()} <span>STORO GRILL</span> utvilket
           av{' '}
           <a className="hover:underline  underline-offset-4 cursor-pointer">
-            Ohana
+            Allawii
           </a>
           .
         </span>
