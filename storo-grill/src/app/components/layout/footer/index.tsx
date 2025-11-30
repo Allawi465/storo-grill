@@ -102,10 +102,10 @@ export default function Footer() {
       <hr className="my-6 sm:mx-auto border-gray-700" />
       <div className="max-w-6xl mx-auto">
         <span className="block text-sm text-center text-white mb-1">
-          © 2021 - {new Date().getFullYear()} <span>STORO GRILL</span> utvilket
+          © 2021 - {new Date().getFullYear()}utvilket
           av{' '}
           <a className="hover:underline  underline-offset-4 cursor-pointer">
-            Allawii
+            Allawi
           </a>
           .
         </span>
