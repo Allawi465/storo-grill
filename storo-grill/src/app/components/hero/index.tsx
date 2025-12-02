@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import hero from '../../../../public/meny/hero.png';
+import hero from '../../../../public/meny/hero.jpg';
 import OrderWith from './orderWith';
 
 export default function Hero() {
@@ -19,7 +19,7 @@ export default function Hero() {
 
         <div className="absolute inset-0 text-white font-extrabold flex flex-col justify-center items-center hero z-20">
           <div className="flex flex-col justify-center my-auto px-4 sm:px-6 text-hero">
-            <h2 className="hero-h2 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-none text-white lg:text-5xl flex justify-start sm:justify-center mb-4">
+            <h2 className="hero-h2 text-3xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-none text-white lg:text-5xl flex justify-start sm:justify-center mb-4">
               Tenk globalt, smak lokalt
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl font-normal text-white flex justify-center mb-4 italic">
